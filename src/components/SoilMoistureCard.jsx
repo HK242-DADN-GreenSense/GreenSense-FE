@@ -1,7 +1,7 @@
 import React from "react";
 import { LineChart } from "@mui/x-charts/LineChart";
 
-const SoilMoistureCard = ({ xAxis, yAxis, current }) => {
+const SoilMoistureCard = ({ xAxis, yAxis, latest }) => {
     const timeData = xAxis ? xAxis : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const moistureData = yAxis
         ? yAxis
@@ -15,7 +15,7 @@ const SoilMoistureCard = ({ xAxis, yAxis, current }) => {
                     Soil Moisture
                 </h2>
                 <span className="text-xs sm:text-sm md:text-base text-gray-600 bg-gray-100 px-2 py-1 rounded">
-                    {current ? current : 37} ml/m³
+                    {latest ? latest : 37} ml/m³
                 </span>
             </div>
 

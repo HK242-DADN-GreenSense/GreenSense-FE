@@ -2,13 +2,13 @@ import React from "react";
 import { LineChart } from "@mui/x-charts/LineChart";
 
 const SoilMoistureCard = ({ xAxis, yAxis, latest }) => {
-    const timeData = xAxis ? xAxis : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const moistureData = yAxis
+    const timeData = xAxis ? xAxis : Array.from({ length: 24 }, (_, i) => i);
+    const soilMoistureData = yAxis
         ? yAxis
-        : [10, 20, 30, 10, 30, 50, 30, 40, 60, 80];
+        : Array.from({ length: 24 }, () => Math.floor(Math.random() * 100));
 
     return (
-        <div className="p-4 sm:p-6 md:p-8 bg-white rounded-lg shadow-md w-full m-8">
+        <div className="p-4 sm:p-6 md:p-8 bg-white rounded-lg shadow-md m-8">
             {/* Header Section */}
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">
@@ -24,8 +24,7 @@ const SoilMoistureCard = ({ xAxis, yAxis, latest }) => {
                     xAxis={[{ data: timeData, label: "Time" }]}
                     series={[
                         {
-                            data: moistureData,
-                            label: "Soil Moisture (ml/m³)",
+                            data: soilMoistureData,
                             color: "#1B41FF",
                             area: true,
                         },

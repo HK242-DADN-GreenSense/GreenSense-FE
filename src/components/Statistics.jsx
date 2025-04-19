@@ -17,6 +17,7 @@ const Statistics = () => {
             {/* Calendar */}
             <div className="col-span-2 bg-white shadow-md">
                 <Calendar />
+                {/* <Notification /> */}
             </div>
         </div>
     );

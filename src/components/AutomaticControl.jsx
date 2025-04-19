@@ -58,24 +58,28 @@ const AutomaticControl = () => {
                 <div className="grid grid-cols-10 grid-rows-1">
                     {value === "custom" && (
                         <>
-                            <div className="col-span-5 row-span-1 col-start-3">
-                                <Slider
-                                    sx={{
-                                        width: 300,
-                                        margin: "8 auto",
-                                    }}
-                                    getAriaLabel={() => "Moisture range"}
-                                    value={range}
-                                    onChange={(e, newRange) => {
-                                        setRange(newRange);
-                                        console.log(newRange);
-                                    }}
-                                    valueLabelDisplay="on"
-                                    getAriaValueText={valuetext}
-                                />
+                            <div className="col-span-5 row-span-1 col-start-3 grid grid-cols-1 grid-rows-1 items-center text-center mt-2">
+                                <div>
+                                    <Slider
+                                        sx={{
+                                            width: 300,
+                                            margin: "8 auto",
+                                        }}
+                                        getAriaLabel={() => "Moisture range"}
+                                        value={range}
+                                        onChange={(e, newRange) => {
+                                            setRange(newRange);
+                                            console.log(newRange);
+                                        }}
+                                        valueLabelDisplay="on"
+                                        getAriaValueText={valuetext}
+                                    />
+                                </div>
                             </div>
                             <div className="col-span-1 row-span-1 col-start-8">
-                                <Button variant="contained">Save</Button>
+                                <button className="border-2 px-8 py-2 rounded-lg bg-[#030391] text-white font-mono hover:cursor-pointer">
+                                    Save
+                                </button>
                             </div>
                         </>
                     )}

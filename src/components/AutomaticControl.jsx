@@ -45,7 +45,7 @@ const AutomaticControl = () => {
                                         },
                                         "& .MuiTypography-root": {
                                             fontSize: 30,
-                                            fontStype: "mono",
+                                            fontFamily: "mono",
                                         },
                                     }}
                                 />

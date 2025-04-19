@@ -6,7 +6,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 
 import Slider from "@mui/material/Slider";
-import Button from "@mui/material/Button";
 
 const valuetext = (value) => `${value}°C`;
 

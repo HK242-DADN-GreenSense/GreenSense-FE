@@ -7,21 +7,23 @@ import dayjs from "dayjs";
 const Calendar = () => {
     const [value, setValue] = useState(dayjs(new Date()));
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateCalendar
-                defaultValue={value}
-                onChange={(value) => {
-                    setValue(value);
-                    console.log(value.$d);
-                }}
-                sx={{ backgroundColor: "#fff" }}
-                slotProps={{
-                    calendarHeader: {
-                        sx: { color: "#000" },
-                    },
-                }}
-            />
-        </LocalizationProvider>
+        <div className="shadow-md">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DateCalendar
+                    defaultValue={value}
+                    onChange={(value) => {
+                        setValue(value);
+                        console.log(value.$d);
+                    }}
+                    sx={{ backgroundColor: "#fff" }}
+                    slotProps={{
+                        calendarHeader: {
+                            sx: { color: "#000" },
+                        },
+                    }}
+                />
+            </LocalizationProvider>
+        </div>
     );
 };
 

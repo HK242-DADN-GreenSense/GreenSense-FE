@@ -13,7 +13,7 @@ const LightingSchedule = ({ valueRange }) => {
     const [min, max] = valueRange;
     const [setting, setSetting] = useState(
         JSON.parse(localStorage.getItem("lightingScheduleSetting")) || {
-            expectedRange: [0, 10],
+            expectedRange: [300, 500],
             currentAction: "init",
             action: "warning",
             schedule: [{ time: new Date(), action: 1 }],

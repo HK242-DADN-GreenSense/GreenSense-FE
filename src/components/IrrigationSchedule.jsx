@@ -13,7 +13,7 @@ const IrrigationSchedule = ({ valueRange }) => {
     const [min, max] = valueRange;
     const [setting, setSetting] = useState(
         JSON.parse(localStorage.getItem("irrigationScheduleSetting")) || {
-            expectedRange: [0, 10],
+            expectedRange: [20, 50],
             currentAction: "init",
             action: "warning",
             schedule: [{ time: new Date(), duration: 20 }],

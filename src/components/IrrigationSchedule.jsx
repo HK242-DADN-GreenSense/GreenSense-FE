@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
 
@@ -8,7 +8,6 @@ import Slider from "@mui/material/Slider";
 import Schedule from "./Schedule";
 import ScheduleDuration from "./ScheduleDuration";
 import useDebounce from "../hooks/useDebounce";
-import { useEffect } from "react";
 
 const IrrigationSchedule = ({ valueRange }) => {
     const [min, max] = valueRange;

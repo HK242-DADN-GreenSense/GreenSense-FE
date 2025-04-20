@@ -26,6 +26,10 @@ const TemperatureSchedule = ({ valueRange }) => {
         return { value: value, label: value };
     });
 
+    const handleRangeChange = (e, newRange) => {
+        setSetting({ ...setting, expectedRange: newRange });
+    };
+
     useEffect(() => {
         localStorage.setItem(
             "temperatureScheduleSetting",
@@ -48,12 +52,9 @@ const TemperatureSchedule = ({ valueRange }) => {
                         min={min}
                         max={max}
                         value={setting.expectedRange}
-                        onChange={(e, newRange) => {
-                            setSetting((prev) => ({
-                                ...prev,
-                                expectedRange: newRange,
-                            }));
-                        }}
+                        onChange={(e, newRange) =>
+                            handleRangeChange(e, newRange)
+                        }
                         marks={marks}
                         aria-label="Always visible"
                     />

@@ -31,7 +31,7 @@ const LightingSchedule = ({ valueRange }) => {
             "lightingScheduleSetting",
             JSON.stringify(debouncedSetting)
         );
-        toast.success("Lighting setting updated");
+        toast.success("Lighting schedule setting updated");
     }, [debouncedSetting]);
     return (
         <>

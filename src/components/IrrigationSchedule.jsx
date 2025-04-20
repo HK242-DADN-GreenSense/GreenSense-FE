@@ -31,7 +31,7 @@ const IrrigationSchedule = ({ valueRange }) => {
             "irrigationScheduleSetting",
             JSON.stringify(debouncedSetting)
         );
-        toast.success("Irrigation setting updated");
+        toast.success("Irrigation schedule setting updated");
     }, [debouncedSetting]);
 
     return (

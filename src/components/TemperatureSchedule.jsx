@@ -31,7 +31,7 @@ const TemperatureSchedule = ({ valueRange }) => {
             "temperatureScheduleSetting",
             JSON.stringify(debouncedSetting)
         );
-        toast.success("Temperature setting updated");
+        toast.success("Temperature schedule setting updated");
     }, [debouncedSetting]);
     return (
         <>

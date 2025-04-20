@@ -20,7 +20,7 @@ const IrrigationSchedule = ({ valueRange }) => {
         }
     );
 
-    const debouncedSetting = useDebounce(setting, 500);
+    const debouncedSetting = useDebounce(setting, 1000);
 
     const marks = setting.expectedRange.map((value) => {
         return { value: value, label: value };

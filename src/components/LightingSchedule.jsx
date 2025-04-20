@@ -9,10 +9,10 @@ import Schedule from "./Schedule";
 import ScheduleAction from "./ScheduleAction";
 import useDebounce from "../hooks/useDebounce";
 
-const TemperatureSchedule = ({ valueRange }) => {
+const LightingSchedule = ({ valueRange }) => {
     const [min, max] = valueRange;
     const [setting, setSetting] = useState(
-        JSON.parse(localStorage.getItem("temperatureScheduleSetting")) || {
+        JSON.parse(localStorage.getItem("lightingScheduleSetting")) || {
             expectedRange: [0, 10],
             currentAction: "init",
             action: "warning",
@@ -28,10 +28,10 @@ const TemperatureSchedule = ({ valueRange }) => {
 
     useEffect(() => {
         localStorage.setItem(
-            "temperatureScheduleSetting",
+            "lightingScheduleSetting",
             JSON.stringify(debouncedSetting)
         );
-        toast.success("Temperature setting updated");
+        toast.success("Lighting setting updated");
     }, [debouncedSetting]);
     return (
         <>
@@ -74,4 +74,4 @@ const TemperatureSchedule = ({ valueRange }) => {
     );
 };
 
-export default TemperatureSchedule;
+export default LightingSchedule;

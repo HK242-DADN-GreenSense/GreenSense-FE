@@ -16,7 +16,7 @@ const TemperatureCard = ({ xAxis, yAxis, latest }) => {
             chartInfo={{
                 title: "Temperature",
                 unit: "°C",
-                colorOfChart: "#FF0000",
+                colorOfChart: "#FD7F2C",
             }}
         />
     );

@@ -16,7 +16,7 @@ const LightCard = ({ xAxis, yAxis, latest }) => {
             chartInfo={{
                 title: "Light",
                 unit: "W/m²",
-                colorOfChart: "#1C9B00",
+                colorOfChart: "#2EB62C",
             }}
         />
     );

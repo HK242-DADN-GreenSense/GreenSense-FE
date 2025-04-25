@@ -29,28 +29,30 @@ Ensure you have the following installed:
 
 To start the Vite development server with hot module replacement (HMR):
 
-    ```bash
-    yarn dev
-    ```
+```bash
+yarn dev
+```
 
-    Open your browser and navigate to `http://localhost:5173` (or the port specified in the terminal).
+Open your browser and navigate to `http://localhost:5173` (or the port specified in the terminal).
 
 ### 2. **Build for Production**
 
 To create an optimized production build:
 
-    ```bash
-    yarn build
-    ```
+```bash
+yarn build
+```
 
-    The output will be in the `dist` folder.
+The output will be in the `dist` folder.
 
 ### 3. **Preview the Production Build**
 
 To locally preview the production build:
-`bash
-    yarn preview
-    `
+
+```bash
+yarn preview
+```
+
 This serves the `dist` folder at `http://localhost:4173`.
 
 ## Project Structure

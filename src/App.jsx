@@ -10,6 +10,7 @@ import ManualSwitch from "./components/ManualSwitch";
 import IrrigationControl from "./components/IrrigationControl";
 import LightingControl from "./components/LightingControl";
 import TemperatureControl from "./components/TemperatureControl";
+
 function App() {
     return (
         <>
@@ -17,9 +18,9 @@ function App() {
             <TemperatureCard />
             <LightCard />
             <Calendar /> */}
-            <IrrigationControl />
+            {/* <IrrigationControl />
             <TemperatureControl />
-            <LightingControl />
+            <LightingControl /> */}
             <Statistics />
         </>
     );

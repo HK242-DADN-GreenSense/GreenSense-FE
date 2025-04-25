@@ -1,4 +1,5 @@
 import React from "react";
+
 import { LineChart } from "@mui/x-charts/LineChart";
 
 const Card = ({ xAxis, yAxis, latest, chartInfo }) => {
@@ -9,7 +10,7 @@ const Card = ({ xAxis, yAxis, latest, chartInfo }) => {
     };
 
     return (
-        <div className="p-4 sm:p-6 md:p-8 bg-white rounded-lg shadow-md m-2">
+        <div className="p-4 sm:p-6 md:p-8 bg-white rounded-lg shadow-md m-2 row-span-2">
             {/* Header Section */}
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">

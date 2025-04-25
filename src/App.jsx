@@ -18,9 +18,9 @@ function App() {
             <TemperatureCard />
             <LightCard />
             <Calendar /> */}
-            {/* <IrrigationControl />
+            <IrrigationControl />
             <TemperatureControl />
-            <LightingControl /> */}
+            <LightingControl />
             <Statistics />
         </>
     );

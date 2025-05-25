@@ -2,10 +2,14 @@ import React from "react";
 import Card from "./Card";
 
 const TemperatureCard = ({ xAxis, yAxis, latest }) => {
-    const timeData = xAxis ? xAxis : Array.from({ length: 24 }, (_, i) => i);
-    const lightData = yAxis
-        ? yAxis
-        : Array.from({ length: 24 }, () => Math.floor(Math.random() * 100));
+    // const timeData = xAxis.length
+    //     ? xAxis
+    //     : Array.from({ length: 24 }, (_, i) => i);
+    // const lightData = yAxis.length
+    //     ? yAxis
+    //     : Array.from({ length: 24 }, () => Math.floor(Math.random() * 100));
+    const timeData = xAxis;
+    const lightData = yAxis;
     const latestValue = latest ? latest : 30;
 
     return (

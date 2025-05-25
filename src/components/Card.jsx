@@ -16,14 +16,14 @@ const Card = ({ xAxis, yAxis, latest, chartInfo }) => {
                 <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">
                     {title ? title : "Title of the chart"}
                 </h2>
-                <span className="text-xs sm:text-sm md:text-base text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                {/* <span className="text-xs sm:text-sm md:text-base text-gray-600 bg-gray-100 px-2 py-1 rounded">
                     {latest ? latest : "###"} {unit ? unit : "Unit of measure"}
-                </span>
+                </span> */}
             </div>
 
             <div className="w-full overflow-x-auto">
                 <LineChart
-                    xAxis={[{ data: xAxis, label: "Time" }]}
+                    xAxis={[{ data: xAxis, label: "Time", scaleType: "band" }]}
                     series={[
                         {
                             data: yAxis,

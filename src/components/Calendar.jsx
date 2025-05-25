@@ -4,8 +4,9 @@ import dayjs from "dayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import useDebounce from "../hooks/useDebounce";
 
-const Calendar = () => {
+const Calendar = ({ setSelectedDate }) => {
     const [value, setValue] = useState(dayjs(new Date()));
     return (
         <div className="shadow-md row-span-5">
@@ -14,7 +15,7 @@ const Calendar = () => {
                     value={value}
                     onChange={(value) => {
                         setValue(value);
-                        // console.log(value.$d);
+                        setSelectedDate(value);
                     }}
                     sx={{ backgroundColor: "#fff" }}
                     slotProps={{

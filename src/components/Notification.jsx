@@ -18,7 +18,7 @@ const Notification = () => {
     return (
         <div className="col-span-2 overflow-auto row-span-7 p-2">
             {arr.map((notification, index) => (
-                <div className="p-1">
+                <div key={index} className="p-1">
                     <Alert severity={notification.type}>
                         {notification.message}
                     </Alert>

@@ -16,7 +16,7 @@ const LightingManual = () => {
         axios
             .post(url, { intensity: intensity })
             .then((res) => {
-                intensity
+                intensity != 0
                     ? toast.success(`System will open ${intensity} lights.`)
                     : toast.success(`System will close all lights.`);
             })

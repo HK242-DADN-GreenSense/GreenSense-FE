@@ -16,7 +16,7 @@ const TemperatureManual = () => {
         axios
             .post(url, { angle: angle })
             .then((res) => {
-                angle
+                angle != 0
                     ? toast.success(`Servo will be opened to ${angle}°`)
                     : toast.success(`Servo will be closed.`);
             })

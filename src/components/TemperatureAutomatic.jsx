@@ -7,8 +7,12 @@ import TextField from "@mui/material/TextField";
 import useDebounce from "../hooks/useDebounce";
 
 const TemperatureAutomatic = ({ options }) => {
-    const [temperatures, setTemperatures] = useState(options.temperatures);
-    const [angles, setAngles] = useState(options.angles);
+    const [temperatures, setTemperatures] = useState(
+        options ? options.temperatures : [30, 40, 50, 60]
+    );
+    const [angles, setAngles] = useState(
+        options ? options.angles : [45, 90, 135, 180]
+    );
     const [initial, setInitial] = useState(true);
 
     const debouncedTemperatures = useDebounce(temperatures, 1000);

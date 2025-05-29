@@ -7,8 +7,12 @@ import TextField from "@mui/material/TextField";
 import useDebounce from "../hooks/useDebounce";
 
 const LightingAutomatic = ({ options }) => {
-    const [lights, setLights] = useState(options.lights);
-    const [intensities, setIntensities] = useState(options.intensities);
+    const [lights, setLights] = useState(
+        options ? options.lights : [1, 2, 3, 4]
+    );
+    const [intensities, setIntensities] = useState(
+        options ? options.intensities : [80, 50, 20, 10]
+    );
     const [initial, setInitial] = useState(true);
 
     const debouncedLights = useDebounce(lights, 1000);

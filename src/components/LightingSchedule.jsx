@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
@@ -70,7 +70,6 @@ const LightingSchedule = ({ valueRange }) => {
                     />
                 ))}
             </Schedule>
-            <ToastContainer />
         </>
     );
 };

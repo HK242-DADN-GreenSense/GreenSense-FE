@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import ManualSwitch from "./ManualSwitch";
 
@@ -19,7 +19,6 @@ const TempAndLigntManual = ({ setting, setSetting, name }) => {
                     onChange={(e) => handleSwitch(e)}
                 />
             </div>
-            <ToastContainer />
         </div>
     );
 };

@@ -18,7 +18,7 @@ const SoilMoistureCard = ({ xAxis, yAxis, latest }) => {
             yAxis={lightData}
             latest={latestValue}
             chartInfo={{
-                title: "Soil Moisture",
+                title: "Humid",
                 unit: "ml/m³",
                 colorOfChart: "#1B41FF",
             }}

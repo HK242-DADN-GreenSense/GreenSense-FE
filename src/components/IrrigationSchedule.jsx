@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
@@ -9,8 +9,10 @@ import Schedule from "./Schedule";
 import ScheduleDuration from "./ScheduleDuration";
 import useDebounce from "../hooks/useDebounce";
 
-const IrrigationSchedule = ({ valueRange }) => {
-    const [min, max] = valueRange;
+const IrrigationSchedule = () => {
+    const min = 0;
+    const max = 60;
+    const valueRange = [min, max];
     const [setting, setSetting] = useState(
         JSON.parse(localStorage.getItem("irrigationScheduleSetting")) || {
             expectedRange: [20, 50],
@@ -71,7 +73,6 @@ const IrrigationSchedule = ({ valueRange }) => {
                     />
                 ))}
             </Schedule>
-            <ToastContainer />
         </>
     );
 };

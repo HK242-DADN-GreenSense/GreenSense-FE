@@ -44,7 +44,10 @@ const Statistics = () => {
                 const yAxis = humidData.map((data) => data.data);
                 setSoilMoisture((prev) => ({ ...prev, xAxis, yAxis }));
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                toast.error("Oh no. An error has occurred. Please try again.");
+            });
     }, [selectedDate]);
     useEffect(() => {
         const url = `${
@@ -60,10 +63,12 @@ const Statistics = () => {
                     return `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
                 });
                 const yAxis = temperatureData.map((data) => data.data);
-                console.log(xAxis, yAxis);
                 setTemperature((prev) => ({ ...prev, xAxis, yAxis }));
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                toast.error("Oh no. An error has occurred. Please try again.");
+            });
     }, [selectedDate]);
     useEffect(() => {
         const url = `${
@@ -80,7 +85,10 @@ const Statistics = () => {
                 const yAxis = lightData.map((data) => data.data);
                 setLight((prev) => ({ ...prev, xAxis, yAxis }));
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                toast.error("Oh no. An error has occurred. Please try again.");
+            });
     }, [selectedDate]);
     return (
         <div className="h-[90vh] w-[80vw] p-4 grid grid-cols-1 md:grid-cols-8 grid-rows-6 gap-4">
@@ -105,7 +113,7 @@ const Statistics = () => {
             {/* Calendar */}
             <div className="col-span-2 row-span-6 grid grid-cols-1 grid-rows-12 shadow-md">
                 <Calendar setSelectedDate={setSelectedDate} />
-                <Notification />
+                {/* <Notification /> */}
             </div>
         </div>
     );

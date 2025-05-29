@@ -18,7 +18,7 @@ const LightCard = ({ xAxis, yAxis, latest }) => {
             yAxis={lightData}
             latest={latestValue}
             chartInfo={{
-                title: "Light",
+                title: "Intensity",
                 unit: "W/m²",
                 colorOfChart: "#2EB62C",
             }}

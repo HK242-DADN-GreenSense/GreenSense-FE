@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import src from "../assets/farm-icon.svg";
 import { Outlet, NavLink } from "react-router";
 
@@ -27,7 +28,7 @@ const MainLayout = () => {
                             key={index}
                             className={({ isActive }) =>
                                 isActive
-                                    ? "w-[100%] text-center p-4 text-[1.3rem] bg-[#0BDA51] opacity-50 text-white font-mono font-bold hover:cursor-pointer"
+                                    ? "w-[100%] text-center p-4 text-[1.3rem] bg-[#0BDA51] opacity-80 text-amber-800 font-mono font-bold hover:cursor-pointer"
                                     : "w-[100%] text-center p-4 text-[1.3rem] text-black font-mono font-bold hover:cursor-pointer"
                             }
                         >
@@ -39,6 +40,7 @@ const MainLayout = () => {
                     <Outlet />
                 </div>
             </div>
+            <ToastContainer />
         </>
     );
 };

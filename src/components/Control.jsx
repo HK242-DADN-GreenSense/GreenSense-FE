@@ -1,21 +1,56 @@
 import React, { useState, useEffect } from "react";
+import IrrigationAutomatic from "./IrrigationAutomatic";
+import IrrigationSchedule from "./IrrigationSchedule";
+import IrrigationManual from "./IrrigationManual";
+import LightingAutomatic from "./LightingAutomatic";
+import LightingSchedule from "./LightingSchedule";
+import LightingManual from "./LightingManual";
+import TemperatureAutomatic from "./TemperatureAutomatic";
+import TemperatureSchedule from "./TemperatureSchedule";
+import TemperatureManual from "./TemperatureManual";
 
+const getActions = (title) => {
+    if (title == "IRRIGATION CONTROL") {
+        return (mode, initial = null) =>
+            mode == "automatic" ? (
+                <IrrigationAutomatic options={initial} />
+            ) : mode == "scheduled" ? (
+                <IrrigationSchedule options={initial} />
+            ) : (
+                <IrrigationManual options={initial} />
+            );
+    }
+    if (title == "LIGHTING CONTROL")
+        return (mode, initial = null) =>
+            mode == "automatic" ? (
+                <LightingAutomatic options={initial} />
+            ) : mode == "scheduled" ? (
+                <LightingSchedule options={initial} />
+            ) : (
+                <LightingManual options={initial} />
+            );
+    if (title == "TEMPERATURE CONTROL") {
+        return (mode, initial = null) =>
+            mode == "automatic" ? (
+                <TemperatureAutomatic options={initial} />
+            ) : mode == "scheduled" ? (
+                <TemperatureSchedule options={initial} />
+            ) : (
+                <TemperatureManual options={initial} />
+            );
+    }
+};
 function Control(props) {
     const listOfButtons = ["Automatic", "Scheduled", "Manual"];
-    const listModes = ["automatic", "scheduled", "manual"];
 
-    const { title, color, actions, image, currentMeasure } = props;
-
+    const { title, color, image, currentMeasure, mode, setMode, options } =
+        props;
+    const [initial, setInitial] = useState(true);
     const [latestValueMeasured, setLatestValueMeasured] = useState(0);
-
-    const [mode, setMode] = useState(
-        listModes[Math.floor(Math.random() * listModes.length)]
-    );
-
+    const actions = getActions(title);
     useEffect(() => {
         setLatestValueMeasured(60);
     }, []);
-
     return (
         <div className="h-[90vh] w-[80vw] grid grid-cols-4 grid-rows-6 gap-4 p-4 items-center">
             {/* TITLE */}
@@ -25,7 +60,7 @@ function Control(props) {
             >
                 {title}
             </h1>
-            {/* BUTTON */}
+            {/*  BUTTON */}
             <div className="h-[100%] w-[100%] col-span-2 row-span-1 col-start-2 flex justify-between items-center">
                 {listOfButtons.map((button, index) => (
                     <button
@@ -36,7 +71,10 @@ function Control(props) {
                                 ? "text-black rounded-2xl border-2 p-4 m-8 w-[30%] text-[1em] text-center font-mono hover:cursor-pointer hover:opacity-50"
                                 : "text-black rounded-2xl p-4 m-8 w-[30%] text-[1em] text-center font-mono hover:cursor-pointer hover:opacity-50"
                         }
-                        onClick={() => setMode(button.toLowerCase())}
+                        onClick={() => {
+                            setMode(button.toLowerCase());
+                            setInitial(false);
+                        }}
                     >
                         {button}
                     </button>
@@ -67,11 +105,10 @@ function Control(props) {
                         </div>
                     </div>
                     {/* CONTROL SECTION */}
-                    {actions[mode]}
+                    {initial ? actions(mode, options) : actions(mode)}
                 </div>
             </div>
         </div>
     );
 }
-
 export default Control;

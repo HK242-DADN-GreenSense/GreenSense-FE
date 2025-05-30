@@ -4,7 +4,7 @@
 
 Ensure you have the following installed:
 
--   **Node.js** (version 16 or higher): [Download Node.js](https://nodejs.org/)
+-   **Node.js** (version 20 or higher): [Download Node.js](https://nodejs.org/)
 -   **Yarn** (version 1.x): Install globally with `npm install -g yarn`
 -   A code editor like [Visual Studio Code](https://code.visualstudio.com/)
 

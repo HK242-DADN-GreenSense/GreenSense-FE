@@ -27,7 +27,7 @@ Ensure you have the following installed:
 
 ### 1. **Create .env file**
 
-Create `.env` file like `.env.example`, change VITE_HOST to yours.
+Create `.env` file like `.env.example`, change `VITE_HOST` to yours.
 
 ### 2. **Start the Development Server**
 

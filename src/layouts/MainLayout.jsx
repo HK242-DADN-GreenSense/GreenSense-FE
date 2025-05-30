@@ -1,6 +1,8 @@
 import { ToastContainer } from "react-toastify";
 import src from "../assets/farm-icon.svg";
 import { Outlet, NavLink } from "react-router";
+import { useEffect } from "react";
+import { socket } from "../external/socket";
 
 const MainLayout = () => {
     const features = [
@@ -16,6 +18,26 @@ const MainLayout = () => {
         "Temperature Control": "temperature",
         "Lighting Control": "lighting",
     };
+
+    const onNotification = (value) => {
+        console.log(value);
+    };
+
+    useEffect(() => {
+        socket.on("connect", () => {
+            console.log("Connected to server");
+        });
+        socket.on("sensor_humid", onNotification);
+        socket.on("sensor_temperature", onNotification);
+        socket.on("sensor_light-sensor", onNotification);
+        socket.on("sensor_gadget_type", onNotification);
+        return () => {
+            socket.off("sensor_humid", onNotification);
+            socket.off("sensor_temperature", onNotification);
+            socket.off("sensor_light-sensor", onNotification);
+            socket.off("sensor_gadget_type", onNotification);
+        };
+    }, []);
 
     return (
         <>

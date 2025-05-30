@@ -19,7 +19,7 @@ const TemperatureControl = () => {
         icon: icon,
         title: "Current Temperature",
         unit: "°C",
-        api: "" || 60, // call API to get current measure
+        channel: "sensor_temperature",
     };
     useEffect(() => {
         (async () => {

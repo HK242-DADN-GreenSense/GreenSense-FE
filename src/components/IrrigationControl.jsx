@@ -19,7 +19,7 @@ const IrrigationControl = () => {
         icon: icon,
         title: "Current Humid",
         unit: "ml/m³",
-        api: "" || 60, // call API to get current measure
+        channel: "sensor_humid",
     };
     useEffect(() => {
         (async () => {

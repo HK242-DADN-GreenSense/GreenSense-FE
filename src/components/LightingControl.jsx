@@ -19,7 +19,7 @@ const LightingControl = () => {
         icon: icon,
         title: "Current Intensity",
         unit: "W/m²",
-        api: "" || 300, // call API to get current measure
+        channel: "sensor_light-sensor",
     };
     useEffect(() => {
         (async () => {

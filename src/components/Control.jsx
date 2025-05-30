@@ -8,6 +8,7 @@ import LightingManual from "./LightingManual";
 import TemperatureAutomatic from "./TemperatureAutomatic";
 import TemperatureSchedule from "./TemperatureSchedule";
 import TemperatureManual from "./TemperatureManual";
+import { socket } from "../external/socket";
 
 const getActions = (title) => {
     if (title == "IRRIGATION CONTROL") {
@@ -48,8 +49,17 @@ function Control(props) {
     const [initial, setInitial] = useState(true);
     const [latestValueMeasured, setLatestValueMeasured] = useState(0);
     const actions = getActions(title);
+    const onNotification = (message) => {
+        setLatestValueMeasured(message.value);
+    };
     useEffect(() => {
-        setLatestValueMeasured(60);
+        socket.on("connect", () => {
+            console.log("Connected to server.");
+        });
+        socket.on(currentMeasure.channel, onNotification);
+        return () => {
+            socket.off(currentMeasure.channel, onNotification);
+        };
     }, []);
     return (
         <div className="h-[90vh] w-[80vw] grid grid-cols-4 grid-rows-6 gap-4 p-4 items-center">

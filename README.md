@@ -25,7 +25,11 @@ Ensure you have the following installed:
 
 ## Running the Project
 
-### 1. **Start the Development Server**
+### 1. **Create .env file**
+
+Create `.env` file like `.env.example`, change VITE_HOST to yours.
+
+### 2. **Start the Development Server**
 
 To start the Vite development server with hot module replacement (HMR):
 
@@ -35,7 +39,7 @@ yarn dev
 
 Open your browser and navigate to `http://localhost:5173` (or the port specified in the terminal).
 
-### 2. **Build for Production**
+### 3. **Build for Production**
 
 To create an optimized production build:
 
@@ -45,7 +49,7 @@ yarn build
 
 The output will be in the `dist` folder.
 
-### 3. **Preview the Production Build**
+### 4. **Preview the Production Build**
 
 To locally preview the production build:
 
@@ -66,6 +70,7 @@ GREENSENSE-FE/
 │   ├── assets/          # Static assets like images, fonts, etc.
 │   ├── components/      # Reusable UI compenents
 │   ├── consts/          # Const of the system
+│   ├── external/        # External services (e.g: WebSocket)
 │   ├── hooks/           # Custom React hooks
 │   ├── layouts/         # Page layout components (Header, Footer, etc.)
 │   ├── lib/             # External libraries or wrappers (e.g., axios instance)

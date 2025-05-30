@@ -8,7 +8,6 @@ import axios from "axios";
 const IrrigationManual = () => {
     const [disable, setDisable] = useState(false);
     const [duration, setDuration] = useState(5);
-    const [initial, setInitial] = useState(true);
 
     const handleDurationChange = (e) => {
         setDuration(e.target.value);
